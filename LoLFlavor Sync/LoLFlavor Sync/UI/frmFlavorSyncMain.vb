@@ -142,13 +142,13 @@ Public Class frmFlavorSyncMain
             Exit Sub
         End If
 
-        If buildsChecked({chkDownloadLane, chkDownloadJungle, chkDownloadSupport, chkDownloadARAM}) <= 0 Then
+        If buildsChecked({chkDownloadLane, chkDownloadMid, chkDownloadTop, chkDownloadJungle, chkDownloadSupport, chkDownloadARAM}) <= 0 Then
             MessageBox.Show("Please select at least one build type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
         If cmbMode.SelectedIndex <> 2 Then
-            If MessageBox.Show("You are about to download " & If(clbChamps.CheckedIndices.Count <= 1 And buildsChecked({chkDownloadLane, chkDownloadJungle, chkDownloadSupport, chkDownloadARAM}) <= 1, "a build", "builds") & " for " & clbChamps.CheckedIndices.Count & " " & If(clbChamps.CheckedIndices.Count > 1, "champions", "champion") & ", are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            If MessageBox.Show("You are about to download " & If(clbChamps.CheckedIndices.Count <= 1 And buildsChecked({chkDownloadLane, chkDownloadMid, chkDownloadTop, chkDownloadJungle, chkDownloadSupport, chkDownloadARAM}) <= 1, "a build", "builds") & " for " & clbChamps.CheckedIndices.Count & " " & If(clbChamps.CheckedIndices.Count > 1, "champions", "champion") & ", are you sure?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                 Exit Sub
             End If
         Else
@@ -164,6 +164,8 @@ Public Class frmFlavorSyncMain
 
         Dim buildTypesToDownload As New List(Of IDownloadInfo.laneType)
         If chkDownloadLane.Checked Then buildTypesToDownload.Add(IDownloadInfo.laneType.lane)
+        If chkDownloadTop.Checked Then buildTypesToDownload.Add(IDownloadInfo.laneType.top)
+        If chkDownloadMid.Checked Then buildTypesToDownload.Add(IDownloadInfo.laneType.mid)
         If chkDownloadJungle.Checked Then buildTypesToDownload.Add(IDownloadInfo.laneType.jungle)
         If chkDownloadSupport.Checked Then buildTypesToDownload.Add(IDownloadInfo.laneType.support)
         If chkDownloadARAM.Checked Then buildTypesToDownload.Add(IDownloadInfo.laneType.aram)
@@ -235,6 +237,14 @@ Public Class frmFlavorSyncMain
 
     Private Sub frmFlavorSync_Close() Handles MyBase.FormClosed
         Application.Exit()
+    End Sub
+
+    Private Sub chkDownloadTop_CheckedChanged(sender As Object, e As EventArgs) Handles chkDownloadTop.CheckedChanged
+
+    End Sub
+
+    Private Sub chkDownloadMid_CheckedChanged(sender As Object, e As EventArgs) Handles chkDownloadMid.CheckedChanged
+
     End Sub
 #End Region
 End Class

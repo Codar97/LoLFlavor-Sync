@@ -26,6 +26,8 @@ Partial Class frmFlavorSyncMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFlavorSyncMain))
         Me.btnDownloadBuilds = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.chkDownloadTop = New System.Windows.Forms.CheckBox()
+        Me.chkDownloadMid = New System.Windows.Forms.CheckBox()
         Me.chkDownloadLane = New System.Windows.Forms.CheckBox()
         Me.chkDownloadJungle = New System.Windows.Forms.CheckBox()
         Me.chkDownloadSupport = New System.Windows.Forms.CheckBox()
@@ -71,6 +73,30 @@ Partial Class frmFlavorSyncMain
         Me.Label2.Size = New System.Drawing.Size(328, 13)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Please select the champions for which you want to download builds."
+        '
+        'chkDownloadTop
+        '
+        Me.chkDownloadTop.AutoSize = True
+        Me.chkDownloadTop.Checked = True
+        Me.chkDownloadTop.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkDownloadTop.Location = New System.Drawing.Point(15, 114)
+        Me.chkDownloadTop.Name = "chkDownloadTop"
+        Me.chkDownloadTop.Size = New System.Drawing.Size(76, 17)
+        Me.chkDownloadTop.TabIndex = 14
+        Me.chkDownloadTop.Text = "Top Builds"
+        Me.chkDownloadTop.UseVisualStyleBackColor = True
+        '
+        'chkDownloadMid
+        '
+        Me.chkDownloadMid.AutoSize = True
+        Me.chkDownloadMid.Checked = True
+        Me.chkDownloadMid.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkDownloadMid.Location = New System.Drawing.Point(15, 137)
+        Me.chkDownloadMid.Name = "chkDownloadMid"
+        Me.chkDownloadMid.Size = New System.Drawing.Size(74, 17)
+        Me.chkDownloadMid.TabIndex = 14
+        Me.chkDownloadMid.Text = "Mid Builds"
+        Me.chkDownloadMid.UseVisualStyleBackColor = True
         '
         'chkDownloadLane
         '
@@ -125,7 +151,7 @@ Partial Class frmFlavorSyncMain
         Me.clbChamps.FormattingEnabled = True
         Me.clbChamps.Location = New System.Drawing.Point(15, 91)
         Me.clbChamps.Name = "clbChamps"
-        Me.clbChamps.Size = New System.Drawing.Size(307, 319)
+        Me.clbChamps.Size = New System.Drawing.Size(307, 379)
         Me.clbChamps.TabIndex = 15
         '
         'btnSelectAll
@@ -198,12 +224,14 @@ Partial Class frmFlavorSyncMain
         'grpBuildTypes
         '
         Me.grpBuildTypes.Controls.Add(Me.chkDownloadLane)
+        Me.grpBuildTypes.Controls.Add(Me.chkDownloadTop)
+        Me.grpBuildTypes.Controls.Add(Me.chkDownloadMid)
         Me.grpBuildTypes.Controls.Add(Me.chkDownloadJungle)
         Me.grpBuildTypes.Controls.Add(Me.chkDownloadSupport)
         Me.grpBuildTypes.Controls.Add(Me.chkDownloadARAM)
         Me.grpBuildTypes.Location = New System.Drawing.Point(328, 242)
         Me.grpBuildTypes.Name = "grpBuildTypes"
-        Me.grpBuildTypes.Size = New System.Drawing.Size(146, 115)
+        Me.grpBuildTypes.Size = New System.Drawing.Size(146, 168)
         Me.grpBuildTypes.TabIndex = 24
         Me.grpBuildTypes.TabStop = False
         Me.grpBuildTypes.Text = "Builds"
@@ -254,7 +282,7 @@ Partial Class frmFlavorSyncMain
         'grpSettings
         '
         Me.grpSettings.Controls.Add(Me.cmbMode)
-        Me.grpSettings.Location = New System.Drawing.Point(328, 363)
+        Me.grpSettings.Location = New System.Drawing.Point(328, 416)
         Me.grpSettings.Name = "grpSettings"
         Me.grpSettings.Size = New System.Drawing.Size(143, 47)
         Me.grpSettings.TabIndex = 27
@@ -284,7 +312,7 @@ Partial Class frmFlavorSyncMain
         Me.AcceptButton = Me.btnDownloadBuilds
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(483, 420)
+        Me.ClientSize = New System.Drawing.Size(483, 485)
         Me.Controls.Add(Me.grpSettings)
         Me.Controls.Add(Me.grpBuildsLastUpdated)
         Me.Controls.Add(Me.grpBuildTypes)
@@ -316,6 +344,8 @@ Partial Class frmFlavorSyncMain
     Friend WithEvents btnDownloadBuilds As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents chkDownloadLane As System.Windows.Forms.CheckBox
+    Friend WithEvents chkDownloadTop As System.Windows.Forms.CheckBox
+    Friend WithEvents chkDownloadMid As System.Windows.Forms.CheckBox
     Friend WithEvents chkDownloadJungle As System.Windows.Forms.CheckBox
     Friend WithEvents chkDownloadSupport As System.Windows.Forms.CheckBox
     Friend WithEvents chkDownloadARAM As System.Windows.Forms.CheckBox

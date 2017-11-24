@@ -3,6 +3,8 @@ Namespace Global.LoLFlavor_Sync.DLBuilds
     Public Interface IDownloadInfo
         Enum laneType As Integer
             lane
+			top
+			mid
             jungle
             support
             aram
